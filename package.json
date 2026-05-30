@@ -1,0 +1,21 @@
+{
+  "name": "local-lead-shield-website",
+  "version": "1.0.0",
+  "description": "Local Lead Shield - Fast local-service websites that don't leak leads",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "test": "node verify.js",
+    "build": "echo 'Static site - no build required' && exit 0",
+    "verify": "node verify.js"
+  },
+  "keywords": [
+    "local-business",
+    "website-build",
+    "conversion",
+    "lead-generation"
+  ],
+  "author": "Local Lead Shield",
+  "license": "UNLICENSED",
+  "devDependencies": {}
+}
