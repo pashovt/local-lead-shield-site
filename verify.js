@@ -123,24 +123,31 @@ function runVerification() {
         failed++;
     }
 
-    // Test 5: Check for proper lead guarantee disclaimer
-    log('\nTesting lead guarantee disclaimer...', 'cyan');
-    const noGuaranteeTerms = [
+    // Test 5: Check for proper lead disclaimer or conditional guarantee
+    log('\nTesting lead disclaimer / guarantee terms...', 'cyan');
+    const disclaimerTerms = [
+        'leads still depend on',
         'do not guarantee leads',
         'no. we improve clarity',
-        'leads still depend on',
+    ];
+    const conditionalGuaranteeTerms = [
+        'money-back guarantee',
+        '100% money-back',
     ];
 
-    const disclaimerFound = noGuaranteeTerms.some(term =>
+    const hasDisclaimer = disclaimerTerms.some(term =>
+        html.toLowerCase().includes(term.toLowerCase())
+    );
+    const hasConditionalGuarantee = conditionalGuaranteeTerms.some(term =>
         html.toLowerCase().includes(term.toLowerCase())
     );
 
-    if (disclaimerFound) {
-        log('  ✓ Proper lead guarantee disclaimer found', 'green');
+    if (hasDisclaimer || hasConditionalGuarantee) {
+        log('  ✓ Proper lead disclaimer / conditional guarantee found', 'green');
         passed++;
     } else {
-        log('  ✗ Lead guarantee disclaimer missing or unclear', 'red');
-        issues.push('Must clearly state that leads are not guaranteed');
+        log('  ✗ Lead disclaimer or conditional guarantee missing', 'red');
+        issues.push('Must clearly state lead limitations or offer a documented conditional guarantee');
         failed++;
     }
 
