@@ -213,7 +213,7 @@ body {
 
 .problems-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--spacing-md);
 }
 
@@ -1134,5 +1134,110 @@ html {
 
     .audit-form {
         padding: var(--spacing-md);
+    }
+}
+
+/* AI Workshop Section */
+.ai-workshop-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, #101a2f 100%);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.ai-workshop-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    font-size: 2.5rem;
+}
+
+.section-intro {
+    max-width: 820px;
+    margin: 0 auto var(--spacing-lg);
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+}
+
+.workshop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.workshop-card {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: var(--spacing-md);
+}
+
+.workshop-card h3 {
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+.workshop-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+.workshop-packages {
+    max-width: 900px;
+    margin: 0 auto var(--spacing-md);
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.package-row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.package-row:last-child {
+    border-bottom: none;
+}
+
+.package-row div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.package-row span {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.package-row > strong {
+    color: var(--color-success);
+    white-space: nowrap;
+    font-size: 1.05rem;
+}
+
+.workshop-note {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--color-warning);
+    border-radius: 12px;
+    background-color: var(--color-bg-card);
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 700px) {
+    .package-row {
+        flex-direction: column;
+    }
+
+    .package-row > strong {
+        white-space: normal;
     }
 }
