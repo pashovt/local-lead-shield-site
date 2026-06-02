@@ -1241,3 +1241,26 @@ html {
         white-space: normal;
     }
 }
+
+/* AI services now use the same card/value-stack language as the website and hosting offers */
+.ai-services {
+    background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.ai-services .section-intro {
+    margin-bottom: var(--spacing-lg);
+}
+
+.ai-process {
+    margin-bottom: var(--spacing-lg);
+}
+
+.ai-offer-grid {
+    align-items: stretch;
+}
+
+.ai-services-note {
+    margin-top: var(--spacing-lg);
+}
