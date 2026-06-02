@@ -909,8 +909,17 @@ body {
 /* Value Stack */
 .value-stack {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     margin: var(--spacing-md) 0 var(--spacing-sm);
+}
+
+.value-stack td:first-child {
+    width: 74%;
+}
+
+.value-stack td:last-child {
+    width: 26%;
 }
 
 .value-stack td {
@@ -923,7 +932,7 @@ body {
 .value-stack td:last-child {
     text-align: right;
     white-space: nowrap;
-    padding-left: 1rem;
+    padding-left: 0.6rem;
     color: var(--color-text-muted);
     font-variant-numeric: tabular-nums;
 }
@@ -931,7 +940,7 @@ body {
 .value-stack tr.stack-header td {
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     color: var(--color-text-muted);
     border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.5rem;
@@ -1169,6 +1178,11 @@ html {
     padding: 3rem 0;
 }
 
+:root[data-theme="light"] .guarantee-section {
+    background: linear-gradient(135deg, #052e16 0%, #0f3d22 100%);
+    border-top-color: #10b981;
+}
+
 .guarantee-block {
     display: flex;
     align-items: flex-start;
@@ -1185,15 +1199,19 @@ html {
 }
 
 .guarantee-section-text h2 {
-    color: var(--color-success);
+    color: #34d399;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
 .guarantee-section-text p {
-    color: var(--color-text-secondary);
+    color: rgba(245, 255, 250, 0.92);
     margin-bottom: 0.75rem;
     line-height: 1.6;
+}
+
+.guarantee-section-text strong {
+    color: #ffffff;
 }
 
 .guarantee-section-text p:last-child {
@@ -1202,10 +1220,14 @@ html {
 
 .guarantee-small {
     font-size: 0.875rem;
-    opacity: 0.75;
+    opacity: 0.92;
 }
 
 @media (max-width: 600px) {
+    .value-stack tr.stack-price td:last-child {
+        font-size: 1.25rem;
+    }
+
     .guarantee-block {
         flex-direction: column;
         align-items: center;
