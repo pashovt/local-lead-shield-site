@@ -34,8 +34,9 @@ function runVerification() {
     const html = readFile('index.html');
     const css = readFile('styles.css');
     const js = readFile('script.js');
+    const api = readFile('api/audit-request.js');
 
-    if (!html || !css || !js) {
+    if (!html || !css || !js || !api) {
         log('✗ Missing required files', 'red');
         process.exit(1);
     }
@@ -253,6 +254,103 @@ function runVerification() {
     } else {
         log('  ✗ Potential fake testimonials detected', 'red');
         issues.push('Website may contain fake testimonials');
+        failed++;
+    }
+
+    // Test 13: Business Leak Audit positioning beyond websites
+    log('\nTesting Business Leak Audit positioning...', 'cyan');
+    const positioningTerms = [
+        'Free Business Leak Audit',
+        'A website is just one possible fix',
+        'Google Business Profile',
+        'missed calls',
+    ];
+    const hasPositioning = positioningTerms.every(term => html.includes(term));
+    if (hasPositioning) {
+        log('  ✓ Business Leak Audit positioning found', 'green');
+        passed++;
+    } else {
+        log('  ✗ Business Leak Audit positioning incomplete', 'red');
+        issues.push('Must position the offer as a wider Business Leak Audit, not just website builds');
+        failed++;
+    }
+
+    // Test 14: Plain-English technical term pattern
+    log('\nTesting plain-English technical explanations...', 'cyan');
+    const plainTechTerms = [
+        'Know exactly where every enquiry comes from',
+        'UTM',
+        'See where visitors click, stop and leave',
+        'Microsoft Clarity',
+        'see who visits, from where and what they do',
+        'Google Analytics 4 / GA4',
+    ];
+    if (plainTechTerms.every(term => html.includes(term))) {
+        log('  ✓ Plain-English technical explanations found', 'green');
+        passed++;
+    } else {
+        log('  ✗ Plain-English technical explanations missing', 'red');
+        issues.push('Technical terms must be explained as customer benefits first');
+        failed++;
+    }
+
+    // Test 15: Free audit intake form
+    log('\nTesting free audit intake form...', 'cyan');
+    const requiredFormFields = [
+        'id="audit-form"',
+        'name="businessName"',
+        'name="contactName"',
+        'name="phone"',
+        'name="email"',
+        'name="customerType"',
+        'name="whatSell"',
+        'name="websiteUrl"',
+        'name="gbpUrl"',
+        'name="socialUrl"',
+        'name="productUrl"',
+        'name="biggestLeak"',
+        'name="consent"',
+        'name="website"',
+    ];
+    if (requiredFormFields.every(term => html.includes(term))) {
+        log('  ✓ Free audit intake form fields found', 'green');
+        passed++;
+    } else {
+        log('  ✗ Free audit intake form incomplete', 'red');
+        issues.push('Free audit form must include required JV/client intake fields and honeypot');
+        failed++;
+    }
+
+    // Test 16: Secure API handler basics
+    log('\nTesting secure API handler basics...', 'cyan');
+    const apiSecurityTerms = [
+        "req.method !== 'POST'",
+        'content-length',
+        'sanitizeString',
+        'isValidEmail',
+        'isValidUrl',
+        'checkRateLimit',
+        'Honeypot',
+        'SMTP_HOST',
+        'CRM_API_KEY',
+    ];
+    if (apiSecurityTerms.every(term => api.includes(term))) {
+        log('  ✓ Secure API handler checks found', 'green');
+        passed++;
+    } else {
+        log('  ✗ Secure API handler missing expected checks', 'red');
+        issues.push('API handler must include POST-only, size guard, sanitisation, validation, honeypot, rate-limit and integration TODOs');
+        failed++;
+    }
+
+    // Test 17: Client-side safe form submission
+    log('\nTesting client-side form submission...', 'cyan');
+    if (js.includes("fetch('/api/audit-request'") && js.includes('textContent') && js.includes('sanitizeText')) {
+        log('  ✓ Client-side secure form submission found', 'green');
+        passed++;
+    } else {
+        log('  ✗ Client-side form submission incomplete', 'red');
+        issues.push('script.js must submit to API and avoid unsafe HTML insertion');
         failed++;
     }
 

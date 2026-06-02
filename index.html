@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="We turn your Google page, reviews and service details into a fast local-service website built to win trust and capture enquiries — then monitor where leads still leak.">
-    <title>Local Lead Shield - Fast Local-Service Websites That Don't Leak Leads</title>
+    <meta name="description" content="Free Business Leak Audit for local service businesses. Find where enquiries leak before they reach you — website, Google Business, reviews, contact paths, missed calls. Website build is one possible fix.">
+    <title>Local Lead Shield - Free Business Leak Audit | Find Where Enquiries Leak</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,10 +37,10 @@
     <section id="home" class="hero">
         <div class="container">
             <h1>Your next customer should not have to work hard to contact you.</h1>
-            <p class="hero-subheading">We turn your Google page, reviews, photos and service details into a fast local-service website built to win trust and capture enquiries — then monitor where leads still leak.</p>
+            <p class="hero-subheading">Free Business Leak Audit for local service businesses. We find where enquiries leak before they reach you — website, Google Business Profile, reviews, contact paths, missed calls, follow-up. A website is just one possible fix.</p>
             <div class="hero-ctas">
-                <a href="#contact" class="btn btn-primary">Get a Quick Leak Check</a>
-                <a href="#website-sprint" class="btn btn-secondary">View Website Sprint</a>
+                <a href="#contact" class="btn btn-primary">Get Free Leak Audit</a>
+                <a href="#leak-audit" class="btn btn-secondary">See What We Fix</a>
             </div>
         </div>
     </section>
@@ -142,8 +142,8 @@
                             <tr><td>Competitor angle review — position your offer to stand out</td><td>£200</td></tr>
                             <tr><td>Stronger service-page structure + FAQ & objection handling built in</td><td>£150</td></tr>
                             <tr><td>Google reviews integrated with permission — your best proof, front and centre</td><td>£100</td></tr>
-                            <tr><td>See where visitors click, stop & leave — Microsoft Clarity heatmap & session recording setup</td><td>£150</td></tr>
-                            <tr><td>Know exactly where every enquiry comes from — UTM campaign tracking sheet</td><td>£100</td></tr>
+                            <tr><td>See where visitors click, stop and leave (Microsoft Clarity heatmap & session recordings)</td><td>£150</td></tr>
+                            <tr><td>Know exactly where every enquiry comes from (UTM campaign tracking sheet)</td><td>£100</td></tr>
                             <tr><td>Launch report</td><td>£75</td></tr>
                             <tr><td>60 days Growth Monitor included (worth £40/mo)</td><td>£80</td></tr>
                             <tr class="stack-total"><td>Total value</td><td>£2,655</td></tr>
@@ -169,8 +169,8 @@
                             <tr><td>Full website rebuild — built to convert, not just look good</td><td>£1,200</td></tr>
                             <tr><td>Enquiry journey redesign — fix every step from visitor to contact</td><td>£500</td></tr>
                             <tr><td>Multi-service booking & contact flow</td><td>£350</td></tr>
-                            <tr><td>Visitor analytics — see who visits, from where & what they do</td><td>£300</td></tr>
-                            <tr><td>Know which ad, post, or referral brought each enquiry — lead source attribution</td><td>£250</td></tr>
+                            <tr><td>Visitor analytics — see who visits, from where and what they do (Google Analytics 4 / GA4)</td><td>£300</td></tr>
+                            <tr><td>Know which ad, post, or referral brought each enquiry (lead source attribution tracking)</td><td>£250</td></tr>
                             <tr><td>Quote & follow-up workflow recommendation map</td><td>£400</td></tr>
                             <tr><td>60 days Leak Watch included (worth £95/mo)</td><td>£190</td></tr>
                             <tr><td>30-day optimisation window after launch</td><td>£300</td></tr>
@@ -257,12 +257,12 @@
                     <table class="value-stack">
                         <tr class="stack-header"><td>What's included</td><td>Value/mo</td></tr>
                         <tr><td>Everything in Basic Hosting & Safety</td><td>£75</td></tr>
-                        <tr><td>See where visitors click, stop & leave — Microsoft Clarity heatmap & session tracking</td><td>£20</td></tr>
-                        <tr><td>Know exactly where every enquiry comes from — UTM campaign tracking sheet</td><td>£15</td></tr>
+                        <tr><td>See where visitors click, stop and leave (Microsoft Clarity heatmaps & session recordings)</td><td>£20</td></tr>
+                        <tr><td>Know exactly where every enquiry comes from (UTM campaign tracking sheet)</td><td>£15</td></tr>
                         <tr><td>Monthly traffic & leak summary report</td><td>£25</td></tr>
                         <tr><td>Visitors, top pages & traffic sources</td><td>incl.</td></tr>
                         <tr><td>Mobile vs desktop split — know how customers browse your site</td><td>incl.</td></tr>
-                        <tr><td>Track how many people tap your contact buttons — call-to-action (CTA) click tracking</td><td>incl.</td></tr>
+                        <tr><td>Track how many people tap your contact buttons (call-to-action / CTA click tracking)</td><td>incl.</td></tr>
                         <tr><td>Form submission tracking</td><td>incl.</td></tr>
                         <tr><td>30 min changes & updates per month</td><td>£30</td></tr>
                         <tr><td>One specific improvement recommended each month</td><td>£20</td></tr>
@@ -442,10 +442,103 @@
     <!-- Contact / CTA -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get a Quick Leak Check</h2>
-            <p class="contact-intro">Free 10-minute call to identify obvious enquiry leaks and get one recommended next action.</p>
-            <a href="mailto:hello@localleadshield.co.uk?subject=Quick%20Leak%20Check%20Request" class="btn btn-primary btn-large">Email: hello@localleadshield.co.uk</a>
-            <p class="contact-note">Or email directly with your Google Business Profile link, website URL (if you have one), and a brief description of your service.</p>
+            <h2>Get Your Free Business Leak Audit</h2>
+            <p class="contact-intro">Fill in the form below. We'll review your public pages and identify where enquiries are leaking. No hidden fees, no obligation.</p>
+
+            <form id="audit-form" class="audit-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="business-name">Business Name <span class="required">*</span></label>
+                        <input type="text" id="business-name" name="businessName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-name">Your Name <span class="required">*</span></label>
+                        <input type="text" id="contact-name" name="contactName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-type">Who do you serve? <span class="required">*</span></label>
+                    <input type="text" id="customer-type" name="customerType" placeholder="e.g. homeowners in Manchester, small businesses, tradespeople" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="what-sell">What do you sell / provide? <span class="required">*</span></label>
+                    <input type="text" id="what-sell" name="whatSell" placeholder="e.g. plumbing services, massage therapy, business consulting" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="website-url">Website URL (optional)</label>
+                        <input type="url" id="website-url" name="websiteUrl" placeholder="https://">
+                    </div>
+                    <div class="form-group">
+                        <label for="gbp-url">Google Business Profile link (optional)</label>
+                        <input type="url" id="gbp-url" name="gbpUrl" placeholder="https://maps.google.com/...">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="social-url">Social media link (optional)</label>
+                        <input type="url" id="social-url" name="socialUrl" placeholder="Facebook, Instagram, LinkedIn">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-url">Product / listing URL (optional)</label>
+                        <input type="url" id="product-url" name="productUrl" placeholder="Marketplace, directory, booking platform">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="biggest-leak">Biggest problem / leak right now? <span class="required">*</span></label>
+                    <select id="biggest-leak" name="biggestLeak" required>
+                        <option value="">Choose one...</option>
+                        <option value="no-website">No website or very old website</option>
+                        <option value="contact-hard">Contact details hard to find or broken</option>
+                        <option value="no-tracking">No idea where enquiries come from</option>
+                        <option value="missed-calls">Missed calls not followed up</option>
+                        <option value="poor-reviews">Poor or no Google reviews</option>
+                        <option value="mobile-issues">Website doesn't work on mobile</option>
+                        <option value="no-social-proof">Social proof exists but not used</option>
+                        <option value="low-traffic">Getting traffic but no enquiries</option>
+                        <option value="other">Other / not sure</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional notes (optional)</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Anything else we should know?"></textarea>
+                </div>
+
+                <!-- Honeypot field (hidden from users, catches bots) -->
+                <input type="text" name="website" id="website" class="honeypot" tabindex="-1" autocomplete="off">
+
+                <div class="form-consent">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <span>I consent to Local Lead Shield reviewing my publicly available business pages (website, Google Business Profile, social media) for the purposes of this audit. <span class="required">*</span></span>
+                    </label>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary btn-large">Request Free Audit</button>
+                </div>
+
+                <div id="form-message" class="form-message"></div>
+            </form>
+
+            <p class="contact-note">Or email directly: <a href="mailto:hello@localleadshield.co.uk">hello@localleadshield.co.uk</a></p>
         </div>
     </section>
 
