@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Free Business Leak Audit and sales funnel systems for UK service businesses. We build the website, tracking, lead capture and follow-up path so traffic can turn into enquiries and revenue.">
     <title>Local Lead Shield - Sales Funnel Systems, Leak Audits & AI Workflow Builds</title>
-    <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.dataset.theme = localStorage.getItem("lls-theme") || "dark";</script>
+    <link rel="stylesheet" href="styles.css?v=20260602-funnel-theme">
 </head>
 <body>
     <!-- Navigation -->
@@ -26,11 +27,17 @@
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+                    <span class="theme-toggle-icon" aria-hidden="true">☀️</span>
+                    <span class="theme-toggle-text">Light</span>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -38,7 +45,7 @@
     <section id="home" class="hero">
         <div class="container">
             <h1>Your website is not the product. The sales funnel is.</h1>
-            <p class="hero-subheading">Free Business Leak Audit for UK service businesses. We find where traffic, enquiries, follow-up and team workflows leak revenue — then build the website, landing page, tracking, lead capture and follow-up system that turns attention into booked conversations.</p>
+            <p class="hero-subheading">Free Business Leak Audit for UK service businesses. We find where traffic, enquiries, follow-up and team workflows leak revenue — Google Business Profile, missed calls, website, landing page, tracking, lead capture and AI use. A website is just one possible fix; the real job is turning attention into booked conversations.</p>
             <div class="hero-ctas">
                 <a href="#contact" class="btn btn-primary">Get Free Leak Audit</a>
                 <a href="#website-sprint" class="btn btn-secondary">See Funnel Builds</a>
@@ -270,7 +277,7 @@
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>We map the funnel and build the first preview</h3>
+                    <h3>We extract proof and map the funnel</h3>
                     <p>Fast, mobile-first funnel page/site with your real proof, clear CTA, tracking plan and no invented content.</p>
                 </div>
                 <div class="step">
@@ -780,6 +787,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260602-funnel-theme"></script>
 </body>
 </html>

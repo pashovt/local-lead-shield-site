@@ -3,6 +3,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
+    // Theme toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = document.querySelector('.theme-toggle-icon');
+    const themeText = document.querySelector('.theme-toggle-text');
+
+    function applyTheme(theme) {
+        const normalized = theme === 'light' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = normalized;
+        localStorage.setItem('lls-theme', normalized);
+
+        if (themeToggle) {
+            const isLight = normalized === 'light';
+            themeToggle.setAttribute('aria-pressed', String(isLight));
+            themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+        }
+
+        if (themeIcon) {
+            themeIcon.textContent = normalized === 'light' ? '🌙' : '☀️';
+        }
+
+        if (themeText) {
+            themeText.textContent = normalized === 'light' ? 'Dark' : 'Light';
+        }
+    }
+
+    applyTheme(localStorage.getItem('lls-theme') || document.documentElement.dataset.theme || 'dark');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+            applyTheme(nextTheme);
+        });
+    }
+
+
     if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
