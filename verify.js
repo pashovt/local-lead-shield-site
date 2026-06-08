@@ -76,9 +76,10 @@ function runVerification() {
         { term: '£850', name: 'Standard Sprint pricing (£850)' },
         { term: '£1,800', name: 'Lead-Ready pricing (£1,800)' },
         { term: '£3,500', name: 'Revenue Leak Rebuild pricing (£3,500)' },
-        { term: '£25', name: 'Basic Hosting pricing (£25)' },
-        { term: '£40', name: 'Growth Monitor pricing (£40)' },
-        { term: '£95', name: 'Leak Watch pricing (£95)' },
+        { term: '£49', name: 'Basic Hosting pricing (£49)' },
+        { term: '£79', name: 'Growth Monitor pricing (£79)' },
+        { term: '£149', name: 'Leak Watch pricing (£149)' },
+        { term: 'Tailored Team AI Workflow Workshop', name: 'Tailored AI workshop positioning' },
     ];
 
     pricingTerms.forEach(item => {
