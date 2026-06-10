@@ -32,20 +32,20 @@ This website presents Local Lead Shield's core offering: building fast, conversi
 
 1. **Hero**: Main value proposition and CTAs
 2. **Problem Strip**: Common enquiry leaks businesses face
-3. **Services**: 
-   - Local Lead Website Sprint (from £850)
-   - Lead-Ready Website + Leak Audit (from £1,800)
-   - Revenue Leak Rebuild (from £3,500)
+3. **Active Services**:
+   - Free Quick Leak Check / AI Task Mapping Call (£0)
+   - Proof-Builder / Referral Website Rate (£345)
+   - Basic Hosting & Safety + Weekly/Monthly Traffic Update (£25/month)
+   - Website add-ons (£95–£195)
+   - AI Task-Mapping Taster (£650)
+   - Tailored Team AI Workflow Workshop (£1,750)
 4. **Process**: 4-step workflow from intake to monitoring
-5. **Monthly Monitoring Plans**: 
-   - Basic Hosting & Safety (£25/month)
-   - Growth Monitor (£40/month)
-   - Leak Watch (£95–£175/month)
-6. **Metrics**: What we track and report
-7. **AI Add-ons**: Clearly separated premium services
-8. **Pricing Summary**: Complete pricing table
+5. **Hosting**: One current hosting/care offer, not multiple tiers
+6. **Metrics**: Plain-English tracking explanations for GA4, UTM and Microsoft Clarity
+7. **AI Training**: Two separate premium training services, not included in standard website builds
+8. **Pricing Summary**: Active standard prices only
 9. **FAQ**: Common questions answered
-10. **Contact**: Email CTA with mailto link
+10. **Contact**: Secure audit request form and email CTA
 
 ## Getting Started
 

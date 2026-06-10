@@ -69,26 +69,49 @@ function runVerification() {
         }
     });
 
-    // Test 2: Check for pricing information
-    log('\nTesting pricing sections...', 'cyan');
-    const pricingTerms = [
-        { term: '£395', name: 'Proof-builder pricing (£395)' },
-        { term: '£850', name: 'Standard Sprint pricing (£850)' },
-        { term: '£1,800', name: 'Lead-Ready pricing (£1,800)' },
-        { term: '£3,500', name: 'Revenue Leak Rebuild pricing (£3,500)' },
-        { term: '£49', name: 'Basic Hosting pricing (£49)' },
-        { term: '£79', name: 'Growth Monitor pricing (£79)' },
-        { term: '£149', name: 'Leak Watch pricing (£149)' },
-        { term: 'Tailored Team AI Workflow Workshop', name: 'Tailored AI workshop positioning' },
+    // Test 2: Check for active pricing information
+    log('\nTesting active pricing sections...', 'cyan');
+    const activePricingTerms = [
+        { term: '£345', name: 'Proof-builder pricing (£345)' },
+        { term: '£25/month', name: 'Basic Hosting pricing (£25/month)' },
+        { term: '£650', name: 'AI Task-Mapping Taster pricing (£650)' },
+        { term: '£1,750', name: 'Tailored Team AI Workflow Workshop pricing (£1,750)' },
+        { term: '£95', name: 'Website add-on pricing (£95)' },
+        { term: '£150', name: 'Website add-on pricing (£150)' },
+        { term: '£195', name: 'Website add-on pricing (£195)' },
     ];
 
-    pricingTerms.forEach(item => {
+    activePricingTerms.forEach(item => {
         if (html.includes(item.term)) {
             log(`  ✓ ${item.name} found`, 'green');
             passed++;
         } else {
             log(`  ✗ ${item.name} missing`, 'red');
             issues.push(`Missing ${item.name}`);
+            failed++;
+        }
+    });
+
+    // Test 2b: Check that stale pricing is removed
+    log('\nTesting that stale pricing is removed...', 'cyan');
+    const stalePricingTerms = [
+        { term: /from £850\b/i, name: 'Old £850 pricing' },
+        { term: /from £1,800\b/i, name: 'Old £1,800 pricing' },
+        { term: /from £3,500\b/i, name: 'Old £3,500 pricing' },
+        { term: /£49\/month/i, name: 'Old £49/month hosting pricing' },
+        { term: /£79\/month/i, name: 'Old £79/month Growth Monitor pricing' },
+        { term: /£149–£299\/month/i, name: 'Old £149–£299/month Leak Watch pricing' },
+        { term: /from £495\b/i, name: 'Old £495 AI taster pricing' },
+        { term: /from £1,250\b/i, name: 'Old £1,250 AI workshop pricing' },
+    ];
+
+    stalePricingTerms.forEach(item => {
+        if (!item.term.test(html)) {
+            log(`  ✓ ${item.name} correctly removed`, 'green');
+            passed++;
+        } else {
+            log(`  ✗ ${item.name} still present in HTML`, 'red');
+            issues.push(`Stale pricing ${item.name} must be removed`);
             failed++;
         }
     });
@@ -352,6 +375,61 @@ function runVerification() {
     } else {
         log('  ✗ Client-side form submission incomplete', 'red');
         issues.push('script.js must submit to API and avoid unsafe HTML insertion');
+        failed++;
+    }
+
+    // Test 18: Check that inactive packages are removed
+    log('\nTesting that inactive packages are removed...', 'cyan');
+    const inactivePackages = [
+        'Local Lead Funnel Starter',
+        'Lead-Ready Funnel + Leak Audit',
+        'Revenue Leak Rebuild',
+        'Growth Monitor',
+        'Leak Watch',
+        'Department AI Rollout',
+        'AI Workflow / Product Build Sprint',
+        'Missed-Call Text-Back Automation',
+        'AI Receptionist / Call Answering Setup',
+        'Quote Follow-Up Workflow',
+        'Weekly AI Leak Briefing',
+    ];
+
+    const inactivePackagesFound = inactivePackages.filter(pkg => html.includes(pkg));
+
+    if (inactivePackagesFound.length === 0) {
+        log('  ✓ All inactive packages correctly removed', 'green');
+        passed++;
+    } else {
+        log('  ✗ Inactive packages still present in HTML', 'red');
+        inactivePackagesFound.forEach(pkg => {
+            log(`    - ${pkg}`, 'yellow');
+        });
+        issues.push(`Inactive packages must be removed: ${inactivePackagesFound.join(', ')}`);
+        failed++;
+    }
+
+    // Test 19: Check that active offers are present
+    log('\nTesting that active offers are present...', 'cyan');
+    const activeOffers = [
+        'Proof-Builder / Referral Website Rate',
+        'Basic Hosting & Safety',
+        'Google Business Profile Polish',
+        'Review Request QR / Link Setup',
+        'AI Task-Mapping Taster',
+        'Tailored Team AI Workflow Workshop',
+    ];
+
+    const missingActiveOffers = activeOffers.filter(offer => !html.includes(offer));
+
+    if (missingActiveOffers.length === 0) {
+        log('  ✓ All active offers present', 'green');
+        passed++;
+    } else {
+        log('  ✗ Some active offers missing', 'red');
+        missingActiveOffers.forEach(offer => {
+            log(`    - ${offer}`, 'yellow');
+        });
+        issues.push(`Active offers must be present: ${missingActiveOffers.join(', ')}`);
         failed++;
     }
 

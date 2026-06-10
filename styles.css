@@ -677,6 +677,13 @@ body {
     font-size: 0.95rem;
 }
 
+.addon-exclusion {
+    color: var(--color-text-tertiary);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: var(--spacing-xs);
+}
+
 .addon-card p:last-child {
     color: var(--color-text-secondary);
     font-size: 0.95rem;
