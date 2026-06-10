@@ -85,7 +85,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--spacing-md);
+    gap: clamp(0.9rem, 1.8vw, var(--spacing-md));
     align-items: center;
 }
 
@@ -94,6 +94,7 @@ body {
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .nav-menu a:hover {
@@ -278,6 +279,12 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: var(--spacing-md);
+}
+
+.problems-grid-six {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .problem-card {
@@ -835,6 +842,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .problems-grid-six {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .nav-menu {
         position: fixed;
         top: 60px;
@@ -1228,6 +1239,10 @@ body {
 }
 
 @media (max-width: 600px) {
+    .problems-grid-six {
+        grid-template-columns: 1fr;
+    }
+
     .addons-grid-eight {
         grid-template-columns: 1fr;
     }
