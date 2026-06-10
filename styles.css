@@ -1167,6 +1167,72 @@ body {
     margin: 0;
 }
 
+
+/* Final layout refinements */
+.funnel-grid-five {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.funnel-grid-five .funnel-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - (var(--spacing-md) / 2));
+}
+
+.process-steps-two-by-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.addons-grid-eight {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.addons-grid-eight .addon-card {
+    grid-column: span 2;
+}
+
+.addons-grid-eight .addon-card:nth-last-child(2) {
+    grid-column: 2 / span 2;
+}
+
+.addons-grid-eight .addon-card:last-child {
+    grid-column: 4 / span 2;
+}
+
+@media (max-width: 900px) {
+    .addons-grid-eight {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .addons-grid-eight .addon-card,
+    .addons-grid-eight .addon-card:nth-last-child(2),
+    .addons-grid-eight .addon-card:last-child {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .funnel-grid-five,
+    .process-steps-two-by-two {
+        grid-template-columns: 1fr;
+    }
+
+    .funnel-grid-five .funnel-card:last-child {
+        grid-column: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .addons-grid-eight {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
